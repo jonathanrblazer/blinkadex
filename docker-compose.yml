@@ -1,0 +1,18 @@
+services:
+  blinkadex-debug:
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+    image: ${LOCAL_REGISTRY}:5002/blinkadex-debug:${TAG}
+    ports:
+      - ${DEBUG_SSH_PORT}:${DEBUG_SSH_PORT}
+    profiles:
+      - debug
+      
+  blinkadex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${DOCKER_LOGIN}/blinkadex:${TAG}
+    profiles:
+      - release
