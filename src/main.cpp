@@ -22,7 +22,7 @@ int main() {
     constexpr int PWM_CHIP = 0;   // pwmchip0
     constexpr int PWM_CHANNEL = 0; // pwm0
     constexpr int PERIOD_NS = 2'000'000;      // 500 Hz
-    constexpr int DUTY_NS   = 1'000'000;      // 50%
+    constexpr int DUTY_NS   = 100'000;      // 50%
 
     const std::string chip = "/sys/class/pwm/pwmchip" + std::to_string(PWM_CHIP);
     const std::string pwm  = chip + "/pwm" + std::to_string(PWM_CHANNEL);
